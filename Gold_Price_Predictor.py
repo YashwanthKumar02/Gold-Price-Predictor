@@ -7,11 +7,11 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 
 # convert CSV file to Parquet file
-gold_data = pd.read_csv('data/gld_price_data.csv')
-gold_data.to_parquet('data/gld_price_data.parquet')
+gold_data = pd.read_csv('gld_price_data.csv')
+gold_data.to_parquet('gld_price_data.parquet')
 
 # load Parquet file to a Pandas DataFrame
-gold_data = pd.read_parquet('data/gld_price_data.parquet')
+gold_data = pd.read_parquet('gld_price_data.parquet')
 
 X = gold_data.drop(['Date','GLD'],axis=1)
 Y = gold_data['GLD']
